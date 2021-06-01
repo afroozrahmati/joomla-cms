@@ -65,6 +65,32 @@
 			field="admin_password"
 			autocomplete="off"
 		/>
+		
+		<field
+			name="admin_securityquestion"
+			type="list"
+			label="Select a Security Question"
+			id="admin_securityquestion"
+			class="inputbox"
+			default="sss">
+			<option value="">Please Select</option>
+			<option value="0">What was your childhood nickname</option>
+  			<option value="1">What was the name of your elementary / primary school</option>
+  			<option value="2">What is your Mothers Maiden Name?</option>
+		</field>
+
+		<field
+			name="admin_securityquestionanswer"
+			type="password"
+			label="Security Question Answer"
+			id="admin_securityquestionanswer"
+			class="inputbox"
+			required="true"
+			filter="raw"
+			validate="equals"
+			field="admin_password"
+			autocomplete="off"
+		/>
 
 		<field
 			name="site_metadesc"
