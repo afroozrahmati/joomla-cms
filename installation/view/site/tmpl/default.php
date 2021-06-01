@@ -115,6 +115,26 @@ defined('_JEXEC') or die;
                 </div>
             </div>
             <!-- Adding Captcha -->
+	    <!---Additional Security Dropdown---!>
+		<div class="control-group">
+				<div class="control-label">
+					<?php echo $this->form->getLabel('admin_securityquestion'); ?>
+				</div>
+				<div class="controls">
+					<?php echo $this->form->getInput('admin_securityquestion'); ?>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="control-label">
+					<?php echo $this->form->getLabel('admin_securityquestionanswer'); ?>
+				</div>
+				<div class="controls">
+					<?php // Disables autocomplete ?> <input type="password" style="display:none">
+					<?php echo $this->form->getInput('admin_securityquestionanswer'); ?>
+				</div>
+			</div>
+	 <!---Additional Security Dropdown---!>	
+			
 		</div>
 	</div>
 	<div class="row-fluid">
