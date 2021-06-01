@@ -636,6 +636,11 @@ class InstallationModelDatabase extends JModelBase
 		{
 			$schema = 'sql/sqlazure/joomla.sql';
 		}
+		elseif ($db->getServerType() === 'mariadb')
+		{
+			$schema = 'sql/mariadb/joomla.sql';
+		}
+		
 		elseif ($db->getServerType() === 'postgresql')
 		{
 			$schema = 'sql/postgresql/joomla.sql';
