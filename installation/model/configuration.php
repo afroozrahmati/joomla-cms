@@ -291,6 +291,8 @@ class InstallationModelConfiguration extends JModelBase
 				->set($db->quoteName('lastvisitDate') . ' = ' . $db->quote($nullDate))
 				->set($db->quoteName('activation') . ' = ' . $db->quote('0'))
 				->set($db->quoteName('params') . ' = ' . $db->quote(''))
+				->set($db->quoteName('securityQuestion') . ' = ' . $db->quote(trim($options->securityQuestion)))
+				->set($db->quoteName('securityQuestAnswer') . ' = ' . $db->quote(trim($options->securityQuestAnswer)))
 				->where($db->quoteName('id') . ' = ' . $db->quote($userId));
 		}
 		else
@@ -306,6 +308,8 @@ class InstallationModelConfiguration extends JModelBase
 				$db->quoteName('lastvisitDate'),
 				$db->quoteName('activation'),
 				$db->quoteName('params')
+				$db->quoteName('securityQuestion'),
+				$db->quoteName('securityQuestAnswer')
 			);
 			$query->clear()
 				->insert('#__users', true)
@@ -314,7 +318,7 @@ class InstallationModelConfiguration extends JModelBase
 					$db->quote($userId) . ', ' . $db->quote('Super User') . ', ' . $db->quote(trim($options->admin_user)) . ', ' .
 					$db->quote($options->admin_email) . ', ' . $db->quote($cryptpass) . ', ' .
 					$db->quote('0') . ', ' . $db->quote('1') . ', ' . $db->quote($installdate) . ', ' . $db->quote($nullDate) . ', ' .
-					$db->quote('0') . ', ' . $db->quote('')
+					$db->quote('0') . ', ' . $db->quote('') . ', ' . $db->quote(trim($options->securityQuestion)) . ', ' . $db->quote(trim($options->securityQuestAnswer))
 				);
 		}
 
